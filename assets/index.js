@@ -1,14 +1,7 @@
 const app = document.querySelector('#app');
 
 const auraMark = (size = 'default', extraClass = '') => `
-  <span class="aura-mark aura-mark-${size} ${extraClass}" aria-hidden="true">
-    <span class="aura-line aura-line-left"></span>
-    <span class="aura-line aura-line-right"></span>
-    <span class="aura-dot aura-dot-left"></span>
-    <span class="aura-dot aura-dot-right"></span>
-    <span class="aura-orbit"></span>
-    <span class="aura-core-dot"></span>
-  </span>
+  <img class="aura-mark aura-mark-${size} ${extraClass}" src="./assets/aura-mark.svg" alt="" aria-hidden="true" />
 `;
 
 app.innerHTML = `
@@ -40,7 +33,7 @@ app.innerHTML = `
         <div class="hero-meta">Windows · Local-first · Experimental</div>
       </div>
 
-      <div class="hero-visual" aria-label="Animated AURA Core">
+      <div class="hero-visual" aria-label="AURA Core">
         <div class="planet-glow"></div>
         ${auraMark('hero', 'aura-mark-animated')}
       </div>
