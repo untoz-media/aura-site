@@ -1,17 +1,30 @@
 const app = document.querySelector('#app');
 
+const auraMark = (size = 'default', extraClass = '') => `
+  <span class="aura-mark aura-mark-${size} ${extraClass}" aria-hidden="true">
+    <span class="aura-line aura-line-left"></span>
+    <span class="aura-line aura-line-right"></span>
+    <span class="aura-dot aura-dot-left"></span>
+    <span class="aura-dot aura-dot-right"></span>
+    <span class="aura-orbit"></span>
+    <span class="aura-core-dot"></span>
+  </span>
+`;
+
 app.innerHTML = `
-  <header class="site-header shell">
-    <a class="brand" href="#top" aria-label="AURA home">
-      <span class="brand-mark" aria-hidden="true"><span></span></span>
-      <span>AURA-1</span>
-    </a>
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="#features">Features</a>
-      <a href="#download">Download</a>
-      <a href="#docs">Documentation</a>
-      <a href="https://github.com/untoz-media/AURA-1">GitHub</a>
-    </nav>
+  <header class="site-header">
+    <div class="site-header-inner shell">
+      <a class="brand" href="#top" aria-label="AURA home">
+        ${auraMark('header')}
+        <span>AURA-1</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#features">Features</a>
+        <a href="#download">Download</a>
+        <a href="#docs">Documentation</a>
+        <a href="https://github.com/untoz-media/AURA-1" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </div>
   </header>
 
   <main id="top">
@@ -29,15 +42,7 @@ app.innerHTML = `
 
       <div class="hero-visual" aria-label="Animated AURA Core">
         <div class="planet-glow"></div>
-        <div class="aura-core aura-core-large">
-          <span class="wing wing-left"></span>
-          <span class="wing wing-right"></span>
-          <span class="node node-left"></span>
-          <span class="node node-right"></span>
-          <span class="ring ring-one"></span>
-          <span class="ring ring-two"></span>
-          <span class="core"></span>
-        </div>
+        ${auraMark('hero', 'aura-mark-animated')}
       </div>
     </section>
 
@@ -117,9 +122,7 @@ app.innerHTML = `
     </section>
 
     <section class="closing shell">
-      <div class="aura-core aura-core-small" aria-hidden="true">
-        <span class="ring ring-one"></span><span class="core"></span>
-      </div>
+      ${auraMark('closing')}
       <p class="kicker">AURA-1 BY UNTOZ</p>
       <h2>This is only the beginning.</h2>
       <p>AI that lives on your computer.</p>
